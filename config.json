@@ -1,0 +1,4 @@
+{
+  "benchmarkExtension": "-benchmark.js",
+  "testExtension": "-benchmark.test.js"
+}

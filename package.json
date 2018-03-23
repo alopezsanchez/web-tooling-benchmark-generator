@@ -1,0 +1,39 @@
+{
+  "name": "web-tooling-benchmark-generator",
+  "version": "1.0.0",
+  "description": "CLI tools to generate benchmark cases.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "wtb-generate": "./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alopezsanchez/web-tooling-benchmark-generator.git"
+  },
+  "keywords": [
+    "web-tooling-benchmark",
+    "cli",
+    "tools"
+  ],
+  "author": "Alejandro López <a.lopez.sanchez@outlook.es>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alopezsanchez/web-tooling-benchmark-generator/issues"
+  },
+  "homepage": "https://github.com/alopezsanchez/web-tooling-benchmark-generator#readme",
+  "dependencies": {
+    "chalk": "^2.3.2",
+    "clear": "^0.1.0",
+    "clui": "^0.3.6",
+    "configstore": "^3.1.1",
+    "figlet": "^1.2.0",
+    "inquirer": "^5.1.0",
+    "lodash": "^4.17.5",
+    "minimist": "^1.2.0",
+    "simple-git": "^1.92.0",
+    "touch": "^3.1.0"
+  }
+}
