@@ -1,14 +1,12 @@
-#!/usr/bin/env node
-
 const clear = require("clear");
 const chalk = require("chalk");
 const figlet = require("figlet");
 
-const files = require("./lib/files");
 const inquirer = require("./lib/inquirer");
+const npm = require("./lib/npm");
 
 clear();
-console.log(
+console.info(
   chalk.yellow(
     figlet.textSync("Web tooling benchmark")
   )
@@ -16,7 +14,8 @@ console.log(
 
 const run = async () => {
   const answers = await inquirer.ask();
-  console.log(answers);
+
+  npm.install(answers.library);
 };
 
 run();
