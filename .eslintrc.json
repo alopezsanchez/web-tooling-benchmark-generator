@@ -6,8 +6,10 @@
   "parserOptions": {
     "ecmaVersion": 2017
   },
+  "plugins": ["prettier"],
   "extends": "eslint:recommended",
   "rules": {
+    "prettier/prettier": "error",
     "indent": [
       "error",
       2
@@ -26,6 +28,7 @@
     ],
     "no-console": ["error", {
       "allow": ["warn", "error", "info"]
-    }]
+    }],
+    "max-len": "error"
   }
 }

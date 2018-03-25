@@ -5,7 +5,18 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint index.js lib"
+    "lint": "eslint index.js lib",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "index.js": [
+      "prettier --write",
+      "git add"
+    ],
+    "lib/**/*.js": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "bin": {
     "wtb-generate": "./index.js"
@@ -30,11 +41,16 @@
     "clear": "^0.1.0",
     "clui": "^0.3.6",
     "cross-spawn": "^6.0.5",
+    "ejs": "^2.5.7",
     "figlet": "^1.2.0",
     "inquirer": "^5.1.0",
     "touch": "^3.1.0"
   },
   "devDependencies": {
-    "eslint": "^4.19.1"
+    "eslint": "^4.19.1",
+    "eslint-plugin-prettier": "^2.6.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.0.0",
+    "prettier": "^1.11.1"
   }
 }
