@@ -1,4 +1,5 @@
 {
+  "sourcePath": "src",
   "benchmarkExtension": "-benchmark.js",
-  "testExtension": "-benchmark.test.js"
+  "benchmarkTestExtension": "-benchmark.test.js"
 }
