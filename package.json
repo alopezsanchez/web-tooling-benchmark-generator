@@ -8,6 +8,11 @@
     "lint": "eslint index.js lib",
     "precommit": "lint-staged"
   },
+  "files": [
+    "lib/",
+    "templates/",
+    "config.json"
+  ],
   "lint-staged": {
     "index.js": [
       "prettier --write",
