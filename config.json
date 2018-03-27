@@ -1,5 +1,8 @@
 {
+  "repositoryName": "web-tooling-benchmark",
+  "repositoryUrl": "https://github.com/v8/web-tooling-benchmark",
   "sourcePath": "src",
+  "targetListFilename": "cli-flags-helper",
   "benchmarkExtension": "-benchmark.js",
   "benchmarkTestExtension": "-benchmark.test.js"
 }
