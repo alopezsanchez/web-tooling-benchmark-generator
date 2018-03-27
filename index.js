@@ -12,6 +12,7 @@ const inquirer = require("./lib/inquirer");
 const sourceFiles = require("./lib/source-files");
 const checks = require("./lib/checks");
 
+// Clear terminal
 clear();
 console.info(chalk.yellow(figlet.textSync("Web tooling benchmark")));
 
@@ -19,7 +20,7 @@ const run = async () => {
   if (!checks.isWebToolingBenchmark()) {
     console.error("It seems that you are not in the correct repository.");
     console.error(`Please, go to your ${config.repositoryName} clone${EOL}`);
-    process.exit(0);
+    process.exit(1);
   }
 
   const { library } = await inquirer.ask();
@@ -28,7 +29,7 @@ const run = async () => {
     console.error(
       "It seems that there is already a benchmark for this library"
     );
-    process.exit(0);
+    process.exit(1);
   }
 
   // npm.install(answers.library);
