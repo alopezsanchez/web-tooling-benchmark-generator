@@ -8,9 +8,10 @@ const { EOL } = require("os");
 const config = require("./config");
 
 const inquirer = require("./lib/inquirer");
-// const npm = require("./lib/npm");
+const npm = require("./lib/npm");
 const sourceFiles = require("./lib/source-files");
 const checks = require("./lib/checks");
+const docs = require("./lib/docs");
 
 // Clear terminal
 clear();
@@ -32,10 +33,12 @@ const run = async () => {
     process.exit(1);
   }
 
-  // npm.install(answers.library);
+  npm.install(library);
 
   await sourceFiles.createBenchmarkFile(library);
   await sourceFiles.createBenchmarkTestFile(library);
+
+  await docs.createNewSection(library);
 };
 
 run();

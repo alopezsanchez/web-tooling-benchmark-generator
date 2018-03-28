@@ -4,5 +4,7 @@
   "sourcePath": "src",
   "targetListFilename": "cli-flags-helper",
   "benchmarkExtension": "-benchmark.js",
-  "benchmarkTestExtension": "-benchmark.test.js"
+  "benchmarkTestExtension": "-benchmark.test.js",
+  "docsFolder": "docs",
+  "docFilename": "in-depth.md"
 }
