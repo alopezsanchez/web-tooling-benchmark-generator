@@ -12,6 +12,7 @@ const npm = require("./lib/npm");
 const sourceFiles = require("./lib/source-files");
 const checks = require("./lib/checks");
 const docs = require("./lib/docs");
+const targetList = require("./lib/target-list");
 
 // Clear terminal
 clear();
@@ -39,6 +40,8 @@ const run = async () => {
   await sourceFiles.createBenchmarkTestFile(library);
 
   await docs.createNewSection(library);
+
+  await targetList.addLibrary(library);
 };
 
 run();
