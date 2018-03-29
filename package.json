@@ -44,13 +44,11 @@
   "dependencies": {
     "chalk": "^2.3.2",
     "clear": "^0.1.0",
-    "clui": "^0.3.6",
     "cross-spawn": "^6.0.5",
     "ejs": "^2.5.7",
     "figlet": "^1.2.0",
     "inquirer": "^5.1.0",
-    "lodash.sortedindex": "^4.1.0",
-    "touch": "^3.1.0"
+    "lodash.sortedindex": "^4.1.0"
   },
   "devDependencies": {
     "eslint": "^4.19.1",
