@@ -64,11 +64,11 @@ const run = async () => {
 
   /* ************************************* */
 
-  await sourceFiles.createBenchmarkFile(library);
+  await sourceFiles.createBenchmarkFile(library, cli);
 
   /* ************************************* */
 
-  await sourceFiles.createBenchmarkTestFile(library);
+  await sourceFiles.createBenchmarkTestFile(library, cli);
 
   /* ************************************* */
 
