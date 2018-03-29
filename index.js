@@ -8,7 +8,7 @@ const figlet = require("figlet");
 const config = require("./config");
 
 const CLI = require("./lib/cli");
-const { SUCCESS, ERROR, WARN, INFO } = require("./lib/cli/status");
+const { SUCCESS, ERROR } = require("./lib/cli/status");
 const npm = require("./lib/npm");
 const sourceFiles = require("./lib/source-files");
 const checks = require("./lib/checks");
