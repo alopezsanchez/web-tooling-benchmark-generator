@@ -1,12 +1,8 @@
 #!/usr/bin/env node
 
 const { EOL } = require("os");
-const clear = require("clear");
-const chalk = require("chalk");
-const figlet = require("figlet");
 
 const config = require("./config");
-
 const CLI = require("./lib/cli");
 const { SUCCESS, ERROR } = require("./lib/cli/status");
 const npm = require("./lib/npm");
@@ -15,13 +11,13 @@ const checks = require("./lib/checks");
 const docs = require("./lib/docs");
 const targetList = require("./lib/target-list");
 
-// Clear terminal
-clear();
-console.info(chalk.yellow(figlet.textSync("Web tooling benchmark")));
+const cli = new CLI();
+
+// Clear terminal and display the banner.
+cli.clear();
+cli.displayBanner();
 
 const run = async () => {
-  const cli = new CLI();
-
   const checkRepoMessage = `Checking if you are in a ${
     config.repositoryName
   } benchmark repository...`;
