@@ -1,48 +1,65 @@
 #!/usr/bin/env node
 
 const { EOL } = require("os");
-const clear = require("clear");
-const chalk = require("chalk");
-const figlet = require("figlet");
 
 const config = require("./config");
-
-const cli = require("./lib/cli");
-const logger = require("./lib/logger");
+const CLI = require("./lib/cli");
+const { SUCCESS, ERROR } = require("./lib/cli/status");
 const npm = require("./lib/npm");
 const sourceFiles = require("./lib/source-files");
 const checks = require("./lib/checks");
 const docs = require("./lib/docs");
 const targetList = require("./lib/target-list");
 
-// Clear terminal
-clear();
-console.info(chalk.yellow(figlet.textSync("Web tooling benchmark")));
+const cli = new CLI();
+
+// Clear terminal and display the banner.
+cli.clear();
+cli.displayBanner();
 
 const run = async () => {
+  const checkRepoMessage = `Checking if you are in a ${
+    config.repositoryName
+  } benchmark repository...`;
+
+  cli.startSpinner(checkRepoMessage);
   if (!checks.isWebToolingBenchmark()) {
-    logger.error("It seems that you are not in the correct repository.");
-    logger.error(`Please, go to your ${config.repositoryName} clone.${EOL}`);
-    process.exit(1);
-  }
-
-  const { library } = await cli.ask();
-
-  if (checks.isAlreadyABenchmark(library)) {
-    logger.error(
-      "It seems that there is already a benchmark for this library."
+    cli.persist(
+      "It seems that you are not in the correct repository. " +
+        `Please, go to your ${config.repositoryName} clone.${EOL}`,
+      ERROR
     );
     process.exit(1);
   }
+  cli.persist(checkRepoMessage, SUCCESS);
 
-  await npm.install(library);
+  const { library } = await cli.ask();
 
-  await sourceFiles.createBenchmarkFile(library);
-  await sourceFiles.createBenchmarkTestFile(library);
+  const checkBenchmarkMessage =
+    "Checking if a benchmark for this library doesn't exist...";
 
-  await docs.createNewSection(library);
+  cli.startSpinner(checkBenchmarkMessage);
+  if (checks.isAlreadyABenchmark(library)) {
+    cli.persist(
+      "It seems that there is already a benchmark for this library.",
+      ERROR
+    );
+    process.exit(1);
+  }
+  cli.persist(checkBenchmarkMessage, SUCCESS);
 
-  await targetList.addLibrary(library);
+  // Install dependency.
+  npm.install(library, cli);
+
+  // Create source files.
+  await sourceFiles.createBenchmarkFile(library, cli);
+  await sourceFiles.createBenchmarkTestFile(library, cli);
+
+  // Update docs.
+  await docs.createNewSection(library, cli);
+
+  // Update target list.
+  await targetList.addLibrary(library, cli);
 };
 
 run();
