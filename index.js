@@ -22,8 +22,6 @@ console.info(chalk.yellow(figlet.textSync("Web tooling benchmark")));
 const run = async () => {
   const cli = new CLI();
 
-  /* ************************************* */
-
   const checkRepoMessage = `Checking if you are in a ${
     config.repositoryName
   } benchmark repository...`;
@@ -39,11 +37,7 @@ const run = async () => {
   }
   cli.persist(checkRepoMessage, SUCCESS);
 
-  /* ************************************* */
-
   const { library } = await cli.ask();
-
-  /* ************************************* */
 
   const checkBenchmarkMessage =
     "Checking if a benchmark for this library doesn't exist...";
@@ -58,25 +52,18 @@ const run = async () => {
   }
   cli.persist(checkBenchmarkMessage, SUCCESS);
 
-  /* ************************************* */
-
+  // Install dependency.
   npm.install(library, cli);
 
-  /* ************************************* */
-
+  // Create source files.
   await sourceFiles.createBenchmarkFile(library, cli);
-
-  /* ************************************* */
-
   await sourceFiles.createBenchmarkTestFile(library, cli);
 
-  /* ************************************* */
+  // Update docs.
+  await docs.createNewSection(library, cli);
 
-  await docs.createNewSection(library);
-
-  /* ************************************* */
-
-  await targetList.addLibrary(library);
+  // Update target list.
+  await targetList.addLibrary(library, cli);
 };
 
 run();
