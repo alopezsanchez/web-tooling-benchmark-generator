@@ -7,8 +7,8 @@ const figlet = require("figlet");
 
 const config = require("./config");
 
+const cli = require("./lib/cli");
 const logger = require("./lib/logger");
-const inquirer = require("./lib/inquirer");
 const npm = require("./lib/npm");
 const sourceFiles = require("./lib/source-files");
 const checks = require("./lib/checks");
@@ -26,7 +26,7 @@ const run = async () => {
     process.exit(1);
   }
 
-  const { library } = await inquirer.ask();
+  const { library } = await cli.ask();
 
   if (checks.isAlreadyABenchmark(library)) {
     logger.error(
