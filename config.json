@@ -6,5 +6,7 @@
   "benchmarkExtension": "-benchmark.js",
   "benchmarkTestExtension": "-benchmark.test.js",
   "docsFolder": "docs",
-  "docFilename": "in-depth.md"
+  "docFilename": "in-depth.md",
+  "vfsFilename": "vfs.js",
+  "thirdPartyFolder": "third_party"
 }

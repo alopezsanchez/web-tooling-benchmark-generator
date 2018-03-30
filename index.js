@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 
 const { EOL } = require("os");
+const path = require("path");
 
 const config = require("./config");
 const CLI = require("./lib/cli");
-const { SUCCESS, ERROR } = require("./lib/cli/status");
+const { SUCCESS, ERROR, INFO } = require("./lib/cli/status");
 const npm = require("./lib/npm");
 const sourceFiles = require("./lib/source-files");
 const checks = require("./lib/checks");
@@ -60,6 +61,17 @@ const run = async () => {
 
   // Update target list.
   await targetList.addLibrary(library, cli);
+
+  // Info about third_party assets.
+  cli.write(
+    `Don't forget to put any assets used by the benchmark into the ${
+      config.thirdPartyFolder
+    } folder and hook them up with the virtual file system in ${path.join(
+      config.sourcePath,
+      config.vfsFilename
+    )}.`,
+    INFO
+  );
 };
 
 run();
