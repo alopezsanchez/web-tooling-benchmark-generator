@@ -13,6 +13,7 @@ This tool:
 * Creates a new section in the documentation file.
 * Updates the target list (list of runnable benchmarks).
 
+## Demo
 
 <p align="center">
   <img src="http://g.recordit.co/6YVNp7iA4t.gif" alt="Demo"
