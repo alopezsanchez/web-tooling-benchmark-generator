@@ -10,6 +10,12 @@ This tool:
 * Checks if the new library already has a benchmark.
 * Installs the new library with `npm i --save-exact`.
 * Generates the benchmark and benchmark test files with the naming convention.
+* Creates a new section in the documentation file.
+* Updates the target list (list of runnable benchmarks).
+
+## Demo
+
+![Demo](http://g.recordit.co/6YVNp7iA4t.gif)
 
 ## Installation
 
@@ -24,3 +30,11 @@ Inside your [v8/web-tooling-benchmark](https://github.com/v8/web-tooling-benchma
 ```bash
 $ wtb-generate
 ```
+
+## Contributing
+
+Any contribution is welcomed. Please, submit a Pull Request!
+
+## License
+
+MIT. See [License](LICENSE).
