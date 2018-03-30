@@ -13,9 +13,11 @@ This tool:
 * Creates a new section in the documentation file.
 * Updates the target list (list of runnable benchmarks).
 
-## Demo
 
-![Demo](http://g.recordit.co/6YVNp7iA4t.gif)
+<p align="center">
+  <img src="http://g.recordit.co/6YVNp7iA4t.gif" alt="Demo"
+       width="800">
+</p>
 
 ## Installation
 
@@ -23,7 +25,7 @@ This tool:
 $ npm i -g web-tooling-benchmark-generator
 ```
 
-## Use
+## Usage
 
 Inside your [v8/web-tooling-benchmark](https://github.com/v8/web-tooling-benchmark) clone:
 
