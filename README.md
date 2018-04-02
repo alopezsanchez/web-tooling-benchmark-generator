@@ -1,5 +1,6 @@
 # Web tooling benchmark generator
 
+[![npm version](https://badge.fury.io/js/web-tooling-benchmark-generator.svg)](https://badge.fury.io/js/web-tooling-benchmark-generator)
 [![Build Status](https://travis-ci.org/alopezsanchez/web-tooling-benchmark-generator.svg?branch=master)](https://travis-ci.org/alopezsanchez/web-tooling-benchmark-generator)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
