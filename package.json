@@ -1,6 +1,6 @@
 {
   "name": "web-tooling-benchmark-generator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CLI tools to generate benchmark cases in the v8/web-tooling-benchmark repository.",
   "keywords": [
     "v8",
