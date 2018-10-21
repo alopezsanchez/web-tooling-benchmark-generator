@@ -9,7 +9,7 @@ CLI tool to generate new benchmarks in the [v8/web-tooling-benchmark](https://gi
 
 This tool:
 
-* Checks that the user is in in the [v8/web-tooling-benchmark](https://github.com/v8/web-tooling-benchmark) repository.
+* Checks that the user is in the [v8/web-tooling-benchmark](https://github.com/v8/web-tooling-benchmark) repository.
 * Checks if the new library already has a benchmark.
 * Installs the new library with `npm i --save-exact`.
 * Generates the benchmark and benchmark test files with the naming convention.
