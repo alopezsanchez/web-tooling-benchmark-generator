@@ -21,7 +21,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint index.js lib",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "lint-staged": {
     "index.js": [
@@ -52,7 +54,8 @@
     "figures": "^2.0.0",
     "inquirer": "^5.1.0",
     "lodash.sortedindex": "^4.1.0",
-    "ora": "^2.0.0"
+    "ora": "^2.0.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "eslint": "^4.19.1",
@@ -60,5 +63,6 @@
     "husky": "^0.14.3",
     "lint-staged": "^7.2.2",
     "prettier": "^1.11.1"
-  }
+  },
+  "snyk": true
 }
