@@ -46,7 +46,7 @@
   "dependencies": {
     "chalk": "^2.3.2",
     "clear": "^0.1.0",
-    "cross-spawn": "^6.0.5",
+    "cross-spawn": "^7.0.0",
     "ejs": "^2.5.7",
     "figlet": "^1.2.0",
     "figures": "^2.0.0",
